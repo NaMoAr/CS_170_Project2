@@ -11,7 +11,9 @@ using namespace std;
 class Classifier
 {
 public:
+	// This method basically just opens the file and reads every line. Pushes data into vector
 	vector < vector<float> > train(string filename);
+	// 
 	int test(vector < vector <float> > data, vector<float> instance, vector <int> current_features);
 	float euclidean_distance(vector <float> a,
 		vector <float> b,

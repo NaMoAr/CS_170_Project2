@@ -13,13 +13,14 @@ using namespace std;
 int main(int argc, char* argv[]) {
 	cout << "Welcome to Najmeh's Feature Selection Algorithm." << endl;
 	
-
+	// Take in file here
 	cout << "Please enter the name of the file to test: ";
 	string filename;
 	cin >> filename;
 
-
+	// Create a classfier object
 	Classifier c;
+	// Taking data from file and pushing it into a vector
 	vector < vector<float> > data = c.train(filename);
 	
 
