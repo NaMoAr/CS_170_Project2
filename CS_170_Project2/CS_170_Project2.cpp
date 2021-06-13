@@ -23,12 +23,13 @@ int main(int argc, char* argv[]) {
 	// Taking data from file and pushing it into a vector
 	vector < vector<float> > data = c.train(filename);
 	
-
+	// Creating normalize and validator objects
 	Normalize n;
 	Validator v;
+	// Normalize data before anything else to avoid any sensitivity errors/scale issues
 	n.normalize(data);
 
-
+	// Do this if user chooses small.txt only
 	if (filename == "small.txt") {
 	int number_of_features = data[0].size()-1;
 
@@ -47,6 +48,7 @@ int main(int argc, char* argv[]) {
 
 
 	if (filename == "large.txt") {
+	// What is clock_t? Getting time elapsed?
 	clock_t Start2 = clock();
 
 	float acuuracy_2 = v.validate(data, { 1, 15, 27 });

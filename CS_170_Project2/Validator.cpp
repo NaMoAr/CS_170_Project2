@@ -22,7 +22,7 @@ float Validator::validate(vector<vector<float>> data, vector<int> current_featur
 
 
 		if (i % 50 == 0) {
-			cout << "The pridicted class using instance [";
+			cout << "The predicted class using instance [";
 			for (int i = 0; i < instance.size() - 1; i++) {
 				cout << instance[i] << ", ";
 			}
