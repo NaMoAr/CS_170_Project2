@@ -71,6 +71,19 @@ int main(int argc, char* argv[]) {
 
 
 	
+
+using namespace std;
+
+int main(int argc, char* argv[]) {
+	cout << "Welcome to Najmeh's Feature Selection Algorithm." << endl;
+	
+
+	cout << "Please enter total number of features: ";
+	int number_of_features;
+	cin >> number_of_features;
+
+
+
 	int algorithm = 0;
 	cout << "Type the number of the algorithm you want to run. " << endl;
 	cout << "1. Forward Selection" << endl;
@@ -79,6 +92,7 @@ int main(int argc, char* argv[]) {
 	while (algorithm < 1 || algorithm > 3) {
 		cin >> algorithm;
 	}
+
 
 	int feature = 0;
 	for (int i = 0; i < data[0].size() - 1; i++) {
@@ -89,10 +103,14 @@ int main(int argc, char* argv[]) {
 
 	cout << endl;
 	cout << "This dataset has " << feature << " features (not including the class atribute), with "<< data.size() <<" instances."<< endl;
+
+	cout << "Beginning search" << endl;
+
 	cout << endl;
 
 
 	Search search;
+
 	
 
 	clock_t Start = clock();
@@ -118,5 +136,14 @@ int main(int argc, char* argv[]) {
 		
 	float elapsedTime = ((float)(End - Start)) / CLOCKS_PER_SEC;
 	cout << "Time spent on search: " << elapsedTime;
+
+
+
+	if (algorithm == 1)
+		search.Forward_selection(number_of_features);
+	else if (algorithm == 2)
+		search.Backward_Elimination(number_of_features);
+	
+
 	return 0;
 }
