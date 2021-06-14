@@ -139,12 +139,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+
+    <ClCompile Include="Normalize.cpp" />
+    <ClCompile Include="Validator.cpp" />
+    <ClCompile Include="Classifier.cpp" />
     <ClCompile Include="Accuracy.cpp" />
     <ClCompile Include="CS_170_Project2.cpp" />
     <ClCompile Include="Search.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Normalize.h" />
+    <ClInclude Include="Validator.h" />
+    <ClInclude Include="Classifier.h" />
     <ClInclude Include="Accuracy.h" />
+
     <ClInclude Include="Search.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
