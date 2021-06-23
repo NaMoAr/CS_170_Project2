@@ -184,4 +184,4 @@ IV. Analysis
 <br />Finished search!! The best feature subset is {1,3}, which has an accuracy of 0.92%
 
 
-<br />To run the code, clone the repository in your local Visual Studio IDE. 
+<br />**To run the code, clone the repository in your local Visual Studio IDE. 
