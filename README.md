@@ -2,8 +2,18 @@ I.  Introduction
 
 <br />This project, Feature Selection with Nearest Neighbor, is the second project for this class. In this project, we gain further insight into machine learning by using the provided datasets to find the set of best features. Along with this, we use the nearest neighbor classifier to determine the accuracy for a specific set of features. . We also measure the accuracy of our classifier by using the one-leave-out cross validation function.
 Finding the best features is an optimization problem. As a result, we use two Greedy search algorithms to implement search selection. The two algorithms we use specificialy are forward selection and backward elimination. Regardless of which algorithm is used, we obtain the node with the maximum score (set of best features). At the end of this project, we generate a trace of the algorithm.
+
+II.	Code Design
+
+<br />We designed the project in an object-oriented manner. There are four classes in total, each taking care of some part of the program. The Search class has the forward selection and backward elimination functions. Inside of these two classes we defined an object of type Validator to access the validate function. The validate function itself calls the function test in the Classifier class so we have an object of type Classifier inside the validate function. The test function calls the euclidean_distance function to calculate the distance between two nodes. The train function inside the Classifier class is just to read the data from input and put it in a 2D vector, and is called directly by the driver. 
+<br />The Normalize class has three functions: mean, sd, and normalize that obviously apply the normalization task, and is called by the driver after we read the data from the input file and generate a 2D vector.
+<br />We did not apply optimization for our program, but one possible way to optimize the program is taking advantage of Triangle Inequality for finding Euclidean distances. Meaning that we can find the Triangle Inequality bound and reduce the computations. Another way to optimize would be to find the best K-value for the KNN classifier  which would reduce the sensitivity of nodes to give a higher accuracy. 
+
+![UML Class (1)](https://user-images.githubusercontent.com/59351131/123024263-a199e900-d38d-11eb-9f76-92c8b808655c.png)
+
+
   
-II. Dataset Detail
+III. Dataset Detail
 
 <br />Small Dataset: Number of features: 10, number of instances: 100
 <br />Large Dataset: Number of features: 40, number of instances: 1000
@@ -19,7 +29,7 @@ In the two scatter plots below, there is no such boundary between the blue and o
 ![4](https://user-images.githubusercontent.com/59351131/123022000-ede32a00-d389-11eb-9f32-93594efb05f2.PNG)
 
 
-III.  Algorithms
+IIII.  Algorithms
 
 1. 	Forward Selection
 <br />initial state: Empty Set: No features
@@ -36,7 +46,7 @@ III.  Algorithms
 4.  One-Leave-Out cross validation
 	<br />To find the accuracy, we used One-Leave-Out cross validation meaning we selected one of the instances each time as the test instance. We then ran the KNN algorithm to find the class label. We do this process for all the instances in the dataset.Then we divide the number of correct predictions for class labels by the number of instances in total and that gives us the accuracy. 
 
-IV. Analysis
+V. Analysis
 
 <br />Experiment 1: Comparing Forward Selection vs Backward Elimination
 	<br />In the small dataset, forward selection is much more accurate compared to backward elimination when the dataset is normalized. When it is not normalized however, the accuracy does not change. In the large dataset, forward selection has a much better accuracy by 9% when normalized. This result is explained through the benefits of forward selection.
@@ -56,14 +66,14 @@ IV. Analysis
 
 ![6](https://user-images.githubusercontent.com/59351131/123022723-11f33b00-d38b-11eb-8562-126ae79b763d.PNG)
 
-<br />V.  Conclusion
+<br />VI.  Conclusion
 
 <br />	Through the process of working on this project, we gained a much better insight creating algorithms to pick features and working with datasets to perform classifications. In the conclusion of this project, it is evident that making smart decisions on choosing the best algorithm along with managing the size of the dataset has a big effect on performance of the classifier. For this project, we looked at various different performance characteristics to analyze our classification including accuracy and execution time.
 <br />When implementing the feature search algorithms, forward selection gives the highest accuracy for almost every situation. This stays true regardless of the size of the dataset or whether the dataset is normalized or not. Normalizing the dataset also generally helps, although we did have a case where accuracy reported by the Backward-Elimination decreased when we normalized.
 <br />For the backwards elimination algorithm in the general small dataset, we never had 100% accuracy. Through the graphs, we are able to visualize and see that certain instances are miscategorized.
 <br />Each of the Forward-Selection and Backward-Elimination has its own advantages and disadvantages. The best approach is to combine both algorithms and balance their pros and cons. Bi-directional Search is the method that uses both algorithms and provides a better search result than the two algorithms separately. 
 
-<br />VI. Trace of your small dataset
+<br />VI. Trace of my small dataset
 
 <br />Personal small dataset:
 <br />Welcome to Najmeh and Shubham Feature Selection Algorithm.
