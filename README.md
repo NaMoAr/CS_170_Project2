@@ -195,5 +195,5 @@ V. Analysis
 
 
 <br />**To run the code:**
-<br />**Clone the repository in your local machine and use Visual Studio IDE to run it, or use a G++ Compiler to compile and the code inside the CS170_Puzzle folder. Run g++ *.cpp and then ./a.exe**
+<br />**Clone the repository in your local machine and use Visual Studio IDE to run it, or use a G++ Compiler to compile and the code inside the CS170_Puzzle folder. Run g++ /*.cpp and then ./a.exe**
 
